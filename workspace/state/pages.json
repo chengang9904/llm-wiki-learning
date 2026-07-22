@@ -11,7 +11,9 @@
         "cmd/server/signals_unix.go",
         "cmd/server/signals_windows.go"
       ],
-      "updated_at": "2026-07-22"
+      "updated_at": "2026-07-22",
+      "aliases": [],
+      "links": []
     },
     "internal-agent": {
       "title": "模块 internal-agent",
@@ -24,7 +26,54 @@
         "internal/agent/finalize.go",
         "internal/agent/image_requirement.go"
       ],
-      "updated_at": "2026-07-22"
+      "updated_at": "2026-07-22",
+      "aliases": [
+        "Agent ReAct 引擎"
+      ],
+      "links": [
+        "internal-agent-tools"
+      ]
+    },
+    "internal-agent-tools": {
+      "title": "模块 internal-agent-tools",
+      "page_type": "module",
+      "path": "wiki/modules/internal-agent-tools.md",
+      "sources": [
+        "internal/agent/tools/capabilities.go",
+        "internal/agent/tools/data_analysis.go",
+        "internal/agent/tools/data_schema.go",
+        "internal/agent/tools/database_query.go"
+      ],
+      "updated_at": "2026-07-22",
+      "aliases": [],
+      "links": [
+        "internal-agent"
+      ]
+    },
+    "agent-overview": {
+      "title": "Agent 架构总览（示例）",
+      "page_type": "architecture",
+      "path": "wiki/architecture/agent-overview.md",
+      "sources": [
+        "docs/agent-design.md"
+      ],
+      "aliases": [],
+      "updated_at": "2026-07-22",
+      "links": [
+        "internal-agent"
+      ]
     }
+  },
+  "redirects": {
+    "internal-agent-engine": "internal-agent"
+  },
+  "dedup_checked": [
+    "internal-agent|internal-agent-engine",
+    "internal-agent|internal-agent-tools",
+    "internal-agent-engine|internal-agent-tools"
+  ],
+  "index_cache": {
+    "pages_hash": "d9de94cf740563f9",
+    "intro": "本 Wiki 由确定性流水线从 WeKnora 源码生成，覆盖后端模块与启动流程。建议从 architecture 分组读起，再按模块页面下钻；每条关键事实都带行号来源。（mock 导读）"
   }
 }

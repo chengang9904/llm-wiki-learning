@@ -96,19 +96,23 @@
     },
     "internal/agent/tools/capabilities.go": {
       "hash": "572501ac43d0a4e6",
-      "mtime": 1784440009.5788586
+      "mtime": 1784440009.5788586,
+      "processed_hash": "572501ac43d0a4e6"
     },
     "internal/agent/tools/data_analysis.go": {
       "hash": "84de4096bb2a8cc7",
-      "mtime": 1784440009.580859
+      "mtime": 1784440009.580859,
+      "processed_hash": "84de4096bb2a8cc7"
     },
     "internal/agent/tools/data_schema.go": {
       "hash": "9c010bb86ff5ee4b",
-      "mtime": 1784440009.5848548
+      "mtime": 1784440009.5848548,
+      "processed_hash": "9c010bb86ff5ee4b"
     },
     "internal/agent/tools/database_query.go": {
       "hash": "b44bd9c096a06123",
-      "mtime": 1784440009.5858576
+      "mtime": 1784440009.5858576,
+      "processed_hash": "b44bd9c096a06123"
     },
     "internal/agent/tools/definitions.go": {
       "hash": "febf2e4c33fd1e80",

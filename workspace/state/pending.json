@@ -79,7 +79,39 @@
       "status": "done",
       "attempts": 0,
       "error": null
+    },
+    {
+      "id": 11,
+      "path": "internal/agent/tools/capabilities.go",
+      "hash": "572501ac43d0a4e6",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 12,
+      "path": "internal/agent/tools/data_analysis.go",
+      "hash": "84de4096bb2a8cc7",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 13,
+      "path": "internal/agent/tools/data_schema.go",
+      "hash": "9c010bb86ff5ee4b",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 14,
+      "path": "internal/agent/tools/database_query.go",
+      "hash": "b44bd9c096a06123",
+      "status": "done",
+      "attempts": 0,
+      "error": null
     }
   ],
-  "next_id": 11
+  "next_id": 15
 }
