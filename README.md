@@ -110,19 +110,22 @@ MODEL_ID=gpt-4o-mini
 | 返回工具结果 | user 消息里的 `tool_result` 块 | 独立的 `{"role": "tool", "tool_call_id": ...}` 消息 |
 | 工具 schema | `input_schema` | `function.parameters` |
 
-## 六命令（s12 最终形态）
+## 六命令（已在 s12 实现：`s12_fixer_and_complete/code.py`）
 
 ```bash
+cd s12_fixer_and_complete
 python code.py init      # 初始化 workspace/
-python code.py ingest    # 流水线：全量生成 Wiki
-python code.py update    # 流水线：git diff 增量更新
-python code.py lint      # 流水线：质量检查 → state/issues.json
-python code.py query "问题"   # Agent：基于 Wiki + 源码回答
-python code.py fix       # Agent：消费 issues.json 修复页面
-python code.py status    # 查看 state
+python code.py ingest    # 流水线：s03 全量生成 → s04 后处理
+python code.py update    # 流水线：s05 git diff 增量 → s04 后处理
+python code.py lint      # 流水线：s06 质量检查 → state/issues.json
+python code.py query "问题"   # Agent：基于 Wiki + 源码回答（s11 全能力）
+python code.py fix       # Agent：消费 issues.json 逐条修复
+python code.py status    # 查看全部状态
 ```
 
-`ingest / update / lint` 走流水线，`query / fix` 走 Agent——命令行入口本身就是双范式的分界线。
+`ingest / update / lint` 走流水线（子进程调度兄弟阶段，幂等/断点续跑原样生效），
+`query / fix` 走 Agent——命令行入口本身就是双范式的分界线。
+全课程冒烟测试：`python tests/smoke.py`（全部 --mock，无 API Key 可跑，11/11）。
 
 ## Wiki 数据目录
 
@@ -150,24 +153,54 @@ WeKnora 根目录存在**真实 `.env`（含 API 密钥）**。因此：
 3. 任何阶段都不得把敏感文件内容发送给 LLM；
 4. 对 WeKnora 目录只读；写操作只允许发生在本项目内部。
 
+## 收尾：双范式对比
+
+十二个阶段走完，把开篇的表格补全（每一格背后都有一个阶段的实证）：
+
+| 维度 | 流水线（模型即函数） | Agent（模型即决策者） |
+|---|---|---|
+| **成本** | 可精确预算：调用次数 = f(文件数)，内容有截断上限（s01/s03） | 不可预算：轮次由模型决定，只能设护栏（MaxIterations、压缩阈值） |
+| **可复现性** | 高：同样输入 → 同样流程；temperature=0 时输出也基本稳定（s03 幂等重跑） | 低：探索路径每次可能不同；结论可复核（引用行号），过程不可复现 |
+| **可恢复性** | 强：状态外置 + 断点续跑，崩溃损失一个批次（s03 crash 演示） | 弱：上下文即状态，进程死了会话就没了；压缩备忘录（s11）与 session.json 是有限的缓解 |
+| **灵活性** | 低：没写进代码的分支就走不了（if-else 穷举不了判断） | 高：没见过的问题也能拆解探索（s07 的验证任务没有一行任务专用代码） |
+| **适用场景** | 批量、可重复、结构可预知：生成/归并/去重/链接/索引/lint | 开放式、需判断与探索：问答/调用链追踪/逐条修复 |
+
+判断准则始终是那一句：**这件事的步骤能不能事先写死？**
+而 s12 的 fix 命令给出终极形态——不是二选一，是**在正确的边界上交接**：
+外层循环代码（逐条、隔离、限额、核对），内层判断 Agent（修/弃/报告）。
+
+## WeKnora 在此之上的生产化工作
+
+教学版为清晰而砍掉、生产系统必须补回的（每项都在对应阶段的对照小节展开过）：
+
+- **并发治理**：asynq 多队列多 worker、per-slug 锁（`withSlugLock`）、per-model
+  在途配额与 429 退避（`internal/models/limiter`）、防抖攒批（`wikiIngestDelay`）、
+  启动时归还中断任务（`reset_pending_tasks.go`）；
+- **多租户与 RBAC**：所有查询租户作用域化、4 级角色矩阵、`*_scope_test.go`
+  测试家族、数据范围授权（`scope_authorization.go`）；
+- **审计与可观测**：per-workspace 审计日志、Langfuse 全链路 span、每轮 token 计数；
+- **存储与事务**：页面/issue 落数据库（教学版是文件）、归并与标记的事务绑定、
+  墓碑防竞态（`markKnowledgeDeletedForWiki`）；
+- **双版本适配**：同一二进制 Standard（Postgres+Redis+asynq）/ Lite
+  （SQLite+同步执行器）运行时切换；
+- **Agent 生产化**：流式输出与事件总线、会话持久化、memory consolidator、
+  MCP 外部工具、凭据 AES-256-GCM 加密。
+
 ## 已知局限
 
-- 单进程顺序执行，没有 WeKnora 的并发治理（slug 锁在教学版里退化为顺序执行天然满足）；
-- 无向量检索，Wiki 导航靠标题/文本匹配；
+- 单进程顺序执行，没有并发治理（slug 锁退化为顺序执行天然满足）；
+- 无向量检索，Wiki 导航靠标题/别名/文本匹配；
 - schema 校验是手写规则而非 JSON Schema 库，覆盖教学所需即可；
-- 教学优先：宁可重复代码，不做过度抽象。
+- Mock 的语义能力有限（slug 按目录导出、修复按类型脚本化）——配真实 LLM
+  运行才能看到语义化的主题归并与创造性修复；
+- 教学 workspace 只 ingest 了少数目录；对 WeKnora 全量生成（第七节的页面清单）
+  需配真实 LLM 跑 `s12 ingest --limit 0`（注意成本）；
+- 教学优先：宁可阶段间重复代码，不做过度抽象。
 
-## 当前进度
+## 当前进度：全部完成
 
-- [x] s01_llm_as_function
-- [x] s02_doc_to_page
-- [x] s03_map_reduce
-- [x] s04_postprocess
-- [x] s05_incremental_update
-- [x] s06_wiki_lint —— 流水线篇完成
-- [x] s07_agent_loop
-- [x] s08_file_tools_permissions
-- [x] s09_wiki_qa_agent
-- [x] s10_todo_subagent
-- [x] s11_context_engineering（skills/ 八个技能随本阶段交付）
-- [ ] s12
+- [x] 流水线篇 s01–s06（LLM 即函数 → 页面与引用 → map-reduce 幂等批处理 →
+  后处理成 Wiki → git 增量 → lint）
+- [x] Agent 篇 s07–s12（最小循环 → 工具与权限 → Wiki 问答 → todo/子 Agent →
+  上下文工程 → Fixer 与六命令整合）
+- [x] skills/ 八个技能、tests/smoke.py（11/11 通过）

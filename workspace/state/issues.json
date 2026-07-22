@@ -1,18 +1,18 @@
 {
-  "next_id": 7,
+  "next_id": 8,
   "issues": [
     {
-      "id": 2,
-      "type": "dead_source_ref",
-      "severity": "error",
+      "id": 7,
+      "type": "missing_sources",
+      "severity": "warning",
       "slug": "agent-overview",
       "page": "wiki/architecture/agent-overview.md",
-      "description": "引用的源文件在项目中不存在",
-      "evidence": "docs/agent-design.md",
+      "description": "页面没有任何来源引用，事实无法验证",
+      "evidence": "frontmatter sources 为空",
       "status": "open",
       "detected_by": "lint",
-      "created_at": "2026-07-22 02:44",
-      "updated_at": "2026-07-22 02:44"
+      "created_at": "2026-07-22 08:49",
+      "updated_at": "2026-07-22 08:49"
     },
     {
       "id": 3,
@@ -22,10 +22,12 @@
       "page": "",
       "description": "agent-overview 链接了 internal-agent，但 internal-agent 没有链回",
       "evidence": "agent-overview → internal-agent",
-      "status": "open",
+      "status": "ignored",
       "detected_by": "lint",
       "created_at": "2026-07-22 02:44",
-      "updated_at": "2026-07-22 02:44"
+      "updated_at": "2026-07-22 08:49",
+      "resolution_note": "结构性问题，按 fix-wiki-page 决策树应重跑 postprocess 而非手工修补",
+      "resolved_by": "fixer-agent"
     },
     {
       "id": 4,
@@ -35,10 +37,12 @@
       "page": "wiki/architecture/agent-overview.md",
       "description": "没有任何其他页面链接到本页（仅 index 可达或完全孤立）",
       "evidence": "",
-      "status": "open",
+      "status": "ignored",
       "detected_by": "lint",
       "created_at": "2026-07-22 02:44",
-      "updated_at": "2026-07-22 02:44"
+      "updated_at": "2026-07-22 08:49",
+      "resolution_note": "结构性问题，按 fix-wiki-page 决策树应重跑 postprocess 而非手工修补",
+      "resolved_by": "fixer-agent"
     },
     {
       "id": 5,
@@ -54,6 +58,21 @@
       "updated_at": "2026-07-22 02:44"
     },
     {
+      "id": 2,
+      "type": "dead_source_ref",
+      "severity": "error",
+      "slug": "agent-overview",
+      "page": "wiki/architecture/agent-overview.md",
+      "description": "引用的源文件在项目中不存在",
+      "evidence": "docs/agent-design.md",
+      "status": "resolved",
+      "detected_by": "lint",
+      "created_at": "2026-07-22 02:44",
+      "updated_at": "2026-07-22 08:49",
+      "resolution_note": "已删除失效来源 docs/agent-design.md 的引用行。页面已无来源，后续 lint 会以 missing_sources 跟进",
+      "resolved_by": "fixer-agent"
+    },
+    {
       "id": 6,
       "type": "stale_draft",
       "severity": "info",
@@ -61,10 +80,10 @@
       "page": "wiki/architecture/agent-overview.md",
       "description": "draft 状态已持续 37 天未更新（阈值 14 天）",
       "evidence": "updated_at: 2026-06-15",
-      "status": "open",
+      "status": "auto_resolved",
       "detected_by": "lint",
       "created_at": "2026-07-22 02:44",
-      "updated_at": "2026-07-22 02:44"
+      "updated_at": "2026-07-22 08:49"
     },
     {
       "id": 1,
@@ -80,5 +99,5 @@
       "updated_at": "2026-07-22 02:44"
     }
   ],
-  "last_lint": "2026-07-22 02:44"
+  "last_lint": "2026-07-22 08:50"
 }

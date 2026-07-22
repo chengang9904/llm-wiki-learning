@@ -54,9 +54,7 @@
       "title": "Agent 架构总览（示例）",
       "page_type": "architecture",
       "path": "wiki/architecture/agent-overview.md",
-      "sources": [
-        "docs/agent-design.md"
-      ],
+      "sources": [],
       "aliases": [],
       "updated_at": "2026-07-22",
       "links": [

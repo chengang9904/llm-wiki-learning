@@ -3,8 +3,7 @@ title: Agent 架构总览（示例）
 type: architecture
 status: draft
 sources:
-  - {path: docs/agent-design.md, lines: 1-10}
-updated_at: 2026-06-15
+updated_at: 2026-07-22
 ---
 
 # Agent 架构总览（示例）

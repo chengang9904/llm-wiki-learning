@@ -9,3 +9,5 @@
 - 2026-07-22 02:18 | wiki/architecture/agent-overview.md | 原因: deadlink 清理（重写 1，解除 1） | 未确认事项: 0
 - 2026-07-22 02:18 | wiki/index.md | 原因: index 重建（4 个页面） | 未确认事项: 0
 - 2026-07-22 02:18 | wiki/index.md | 原因: index 重建（4 个页面） | 未确认事项: 0
+- 2026-07-22 08:49 | wiki/architecture/agent-overview.md | 原因: fixer 修改（issue #2 dead_source_ref：来源已不存在） | 未确认事项: 0
+- 2026-07-22 08:52 | wiki/index.md | 原因: index 重建（4 个页面） | 未确认事项: 0
