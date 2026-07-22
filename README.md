@@ -167,4 +167,5 @@ WeKnora 根目录存在**真实 `.env`（含 API 密钥）**。因此：
 - [x] s06_wiki_lint —— 流水线篇完成
 - [x] s07_agent_loop
 - [x] s08_file_tools_permissions
-- [ ] s09–s12
+- [x] s09_wiki_qa_agent
+- [ ] s10–s12
