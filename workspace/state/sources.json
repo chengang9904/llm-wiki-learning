@@ -1,0 +1,262 @@
+{
+  "files": {
+    "cmd/server/bootstrap.go": {
+      "hash": "00886d77065485b5",
+      "mtime": 1784440008.2337408,
+      "processed_hash": "00886d77065485b5"
+    },
+    "cmd/server/listen.go": {
+      "hash": "15c897b35f706b3e",
+      "mtime": 1784440008.2347403,
+      "processed_hash": "15c897b35f706b3e"
+    },
+    "cmd/server/main.go": {
+      "hash": "001a4f34b9a1bed2",
+      "mtime": 1784702770.3654222,
+      "processed_hash": "001a4f34b9a1bed2"
+    },
+    "cmd/server/signals_unix.go": {
+      "hash": "c3d2c6de3be39566",
+      "mtime": 1784440008.2367432,
+      "processed_hash": "c3d2c6de3be39566"
+    },
+    "cmd/server/signals_windows.go": {
+      "hash": "62931d2e028d0951",
+      "mtime": 1784440008.2377422,
+      "processed_hash": "62931d2e028d0951"
+    },
+    "internal/agent/act.go": {
+      "hash": "185ef9216e78ccea",
+      "mtime": 1784440009.5462396,
+      "processed_hash": "185ef9216e78ccea"
+    },
+    "internal/agent/const.go": {
+      "hash": "3703fce3e242998a",
+      "mtime": 1784440009.5512457,
+      "processed_hash": "3703fce3e242998a"
+    },
+    "internal/agent/engine.go": {
+      "hash": "63cf0be36d0decb0",
+      "mtime": 1784440009.5522442,
+      "processed_hash": "63cf0be36d0decb0"
+    },
+    "internal/agent/finalize.go": {
+      "hash": "32268c344c66a433",
+      "mtime": 1784440009.5546653,
+      "processed_hash": "32268c344c66a433"
+    },
+    "internal/agent/image_requirement.go": {
+      "hash": "920ebd38e9f83cf5",
+      "mtime": 1784440009.5570529,
+      "processed_hash": "920ebd38e9f83cf5"
+    },
+    "internal/agent/observe.go": {
+      "hash": "f1788caaf6b395f0",
+      "mtime": 1784440009.5625312
+    },
+    "internal/agent/prompts.go": {
+      "hash": "4466871fbaf09e43",
+      "mtime": 1784440009.5645278
+    },
+    "internal/agent/prompts_wiki.go": {
+      "hash": "faf092ef66a09726",
+      "mtime": 1784440009.5655365
+    },
+    "internal/agent/think.go": {
+      "hash": "053bff8e15f34bfe",
+      "mtime": 1784440009.573845
+    },
+    "internal/agent/approval/gate.go": {
+      "hash": "fc30498cdaca8237",
+      "mtime": 1784440009.54924
+    },
+    "internal/agent/memory/consolidator.go": {
+      "hash": "b72141aac2b17b7e",
+      "mtime": 1784440009.5605288
+    },
+    "internal/agent/skills/loader.go": {
+      "hash": "2d0e18ea1ea0261f",
+      "mtime": 1784440009.569528
+    },
+    "internal/agent/skills/manager.go": {
+      "hash": "e6863e30b78fff81",
+      "mtime": 1784440009.57053
+    },
+    "internal/agent/skills/skill.go": {
+      "hash": "ca37e2d3b47c5c14",
+      "mtime": 1784440009.5715332
+    },
+    "internal/agent/token/compress.go": {
+      "hash": "ca5e82e874ab0246",
+      "mtime": 1784440009.5748563
+    },
+    "internal/agent/token/estimator.go": {
+      "hash": "09b076f674cdbcf1",
+      "mtime": 1784440009.5768707
+    },
+    "internal/agent/tools/capabilities.go": {
+      "hash": "572501ac43d0a4e6",
+      "mtime": 1784440009.5788586
+    },
+    "internal/agent/tools/data_analysis.go": {
+      "hash": "84de4096bb2a8cc7",
+      "mtime": 1784440009.580859
+    },
+    "internal/agent/tools/data_schema.go": {
+      "hash": "9c010bb86ff5ee4b",
+      "mtime": 1784440009.5848548
+    },
+    "internal/agent/tools/database_query.go": {
+      "hash": "b44bd9c096a06123",
+      "mtime": 1784440009.5858576
+    },
+    "internal/agent/tools/definitions.go": {
+      "hash": "febf2e4c33fd1e80",
+      "mtime": 1784440009.5868578
+    },
+    "internal/agent/tools/exec_context.go": {
+      "hash": "37ce137d6ef1b072",
+      "mtime": 1784440009.5888557
+    },
+    "internal/agent/tools/faq_snippet.go": {
+      "hash": "7333b8c0433b6e04",
+      "mtime": 1784440009.5888557
+    },
+    "internal/agent/tools/get_document_info.go": {
+      "hash": "9524743de84564f6",
+      "mtime": 1784440009.591251
+    },
+    "internal/agent/tools/grep_chunks.go": {
+      "hash": "2c11e7d4410f57d6",
+      "mtime": 1784440009.59325
+    },
+    "internal/agent/tools/json_repair.go": {
+      "hash": "d6c0ac5d2bb3dd12",
+      "mtime": 1784440009.5982502
+    },
+    "internal/agent/tools/knowledge_search.go": {
+      "hash": "f55193ef6064321d",
+      "mtime": 1784440009.6012473
+    },
+    "internal/agent/tools/list_knowledge_chunks.go": {
+      "hash": "c9bf5a6f4fbc25ac",
+      "mtime": 1784440009.603252
+    },
+    "internal/agent/tools/mcp_oauth.go": {
+      "hash": "0dbf1a77e2e2aeab",
+      "mtime": 1784440009.6042502
+    },
+    "internal/agent/tools/mcp_tool.go": {
+      "hash": "014459cb882f22d7",
+      "mtime": 1784440009.6052516
+    },
+    "internal/agent/tools/normalize_id.go": {
+      "hash": "5f130c135081b974",
+      "mtime": 1784440009.6082494
+    },
+    "internal/agent/tools/param_cast.go": {
+      "hash": "85cac57369bc8e3c",
+      "mtime": 1784440009.6102529
+    },
+    "internal/agent/tools/param_validate.go": {
+      "hash": "821adfd09f09d4c4",
+      "mtime": 1784440009.6132505
+    },
+    "internal/agent/tools/persist.go": {
+      "hash": "92b1503ea827bac0",
+      "mtime": 1784440009.6152508
+    },
+    "internal/agent/tools/query_knowledge_graph.go": {
+      "hash": "a4cf3cdd82543e10",
+      "mtime": 1784440009.6172512
+    },
+    "internal/agent/tools/registry.go": {
+      "hash": "cbe6c8ce580effeb",
+      "mtime": 1784440009.6192503
+    },
+    "internal/agent/tools/sanitize_messages.go": {
+      "hash": "49b16c10fc1c1fa8",
+      "mtime": 1784440009.6222572
+    },
+    "internal/agent/tools/scope_authorization.go": {
+      "hash": "88016934f7bda081",
+      "mtime": 1784440009.627253
+    },
+    "internal/agent/tools/sequentialthinking.go": {
+      "hash": "23cea809faa9e33c",
+      "mtime": 1784440009.6292536
+    },
+    "internal/agent/tools/skill_execute.go": {
+      "hash": "26b6ed4e327e8b8b",
+      "mtime": 1784440009.6312528
+    },
+    "internal/agent/tools/skill_read.go": {
+      "hash": "16209afc91670c8a",
+      "mtime": 1784440009.632256
+    },
+    "internal/agent/tools/strip_think.go": {
+      "hash": "fb7b2a6064b9216f",
+      "mtime": 1784440009.6332536
+    },
+    "internal/agent/tools/think_stream.go": {
+      "hash": "19f3a92ebe811b5d",
+      "mtime": 1784440009.6352549
+    },
+    "internal/agent/tools/todo_write.go": {
+      "hash": "031cc76b03618913",
+      "mtime": 1784440009.6377928
+    },
+    "internal/agent/tools/tool.go": {
+      "hash": "fd84837447c97682",
+      "mtime": 1784440009.6377928
+    },
+    "internal/agent/tools/truncate.go": {
+      "hash": "899f2982ca8143cd",
+      "mtime": 1784440009.6387951
+    },
+    "internal/agent/tools/web_fetch.go": {
+      "hash": "f7167a13aef35bb4",
+      "mtime": 1784440009.640889
+    },
+    "internal/agent/tools/web_search.go": {
+      "hash": "578af89a65d54c58",
+      "mtime": 1784440009.6418896
+    },
+    "internal/agent/tools/wiki_delete_page.go": {
+      "hash": "96ba8289f3f33934",
+      "mtime": 1784440009.6428893
+    },
+    "internal/agent/tools/wiki_flag_issue.go": {
+      "hash": "5e8de048c837cd60",
+      "mtime": 1784440009.64389
+    },
+    "internal/agent/tools/wiki_read_issue.go": {
+      "hash": "9e7de3d686a8107e",
+      "mtime": 1784440009.6460176
+    },
+    "internal/agent/tools/wiki_read_source_doc.go": {
+      "hash": "4ab4c6510c149b60",
+      "mtime": 1784440009.647016
+    },
+    "internal/agent/tools/wiki_rename_page.go": {
+      "hash": "60b3c95e33141e15",
+      "mtime": 1784440009.648017
+    },
+    "internal/agent/tools/wiki_replace_text.go": {
+      "hash": "511684cc7b613b56",
+      "mtime": 1784440009.6490183
+    },
+    "internal/agent/tools/wiki_tools.go": {
+      "hash": "32b09bf9930e27d5",
+      "mtime": 1784440009.651018
+    },
+    "internal/agent/tools/wiki_update_issue.go": {
+      "hash": "6a1dfb4b8defa0eb",
+      "mtime": 1784440009.6520162
+    },
+    "internal/agent/tools/wiki_write_page.go": {
+      "hash": "34b859df88893213",
+      "mtime": 1784440009.6530223
+    }
+  }
+}

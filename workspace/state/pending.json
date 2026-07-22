@@ -1,0 +1,85 @@
+{
+  "ops": [
+    {
+      "id": 1,
+      "path": "cmd/server/bootstrap.go",
+      "hash": "00886d77065485b5",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 2,
+      "path": "cmd/server/listen.go",
+      "hash": "15c897b35f706b3e",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 3,
+      "path": "cmd/server/main.go",
+      "hash": "001a4f34b9a1bed2",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 4,
+      "path": "cmd/server/signals_unix.go",
+      "hash": "c3d2c6de3be39566",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 5,
+      "path": "cmd/server/signals_windows.go",
+      "hash": "62931d2e028d0951",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 6,
+      "path": "internal/agent/act.go",
+      "hash": "185ef9216e78ccea",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 7,
+      "path": "internal/agent/const.go",
+      "hash": "3703fce3e242998a",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 8,
+      "path": "internal/agent/engine.go",
+      "hash": "63cf0be36d0decb0",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 9,
+      "path": "internal/agent/finalize.go",
+      "hash": "32268c344c66a433",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    },
+    {
+      "id": 10,
+      "path": "internal/agent/image_requirement.go",
+      "hash": "920ebd38e9f83cf5",
+      "status": "done",
+      "attempts": 0,
+      "error": null
+    }
+  ],
+  "next_id": 11
+}

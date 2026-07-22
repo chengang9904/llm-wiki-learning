@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "cmd-server": {
+      "title": "模块 cmd-server",
+      "page_type": "module",
+      "path": "wiki/modules/cmd-server.md",
+      "sources": [
+        "cmd/server/bootstrap.go",
+        "cmd/server/listen.go",
+        "cmd/server/main.go",
+        "cmd/server/signals_unix.go",
+        "cmd/server/signals_windows.go"
+      ],
+      "updated_at": "2026-07-22"
+    },
+    "internal-agent": {
+      "title": "模块 internal-agent",
+      "page_type": "module",
+      "path": "wiki/modules/internal-agent.md",
+      "sources": [
+        "internal/agent/act.go",
+        "internal/agent/const.go",
+        "internal/agent/engine.go",
+        "internal/agent/finalize.go",
+        "internal/agent/image_requirement.go"
+      ],
+      "updated_at": "2026-07-22"
+    }
+  }
+}
