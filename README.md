@@ -160,4 +160,5 @@ WeKnora 根目录存在**真实 `.env`（含 API 密钥）**。因此：
 ## 当前进度
 
 - [x] s01_llm_as_function
-- [ ] s02–s12
+- [x] s02_doc_to_page
+- [ ] s03–s12
