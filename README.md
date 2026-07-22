@@ -163,4 +163,5 @@ WeKnora 根目录存在**真实 `.env`（含 API 密钥）**。因此：
 - [x] s02_doc_to_page
 - [x] s03_map_reduce
 - [x] s04_postprocess
-- [ ] s05–s12
+- [x] s05_incremental_update
+- [ ] s06–s12
