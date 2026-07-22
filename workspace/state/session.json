@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "content": "定位上传入口：HTTP handler 到 service 层",
+      "status": "completed",
+      "note": ""
+    },
+    {
+      "id": 2,
+      "content": "追踪 docreader gRPC 解析在哪里被调用",
+      "status": "completed",
+      "note": ""
+    },
+    {
+      "id": 3,
+      "content": "追踪切分 → Embedding → 向量入库",
+      "status": "blocked",
+      "note": "mock 演示预算内不展开；真实 LLM 会再派子 Agent"
+    },
+    {
+      "id": 4,
+      "content": "综合各段成完整链路",
+      "status": "in_progress",
+      "note": ""
+    }
+  ],
+  "updated_at": "2026-07-22 08:34"
+}
