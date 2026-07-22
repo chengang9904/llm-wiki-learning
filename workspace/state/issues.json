@@ -1,0 +1,84 @@
+{
+  "next_id": 7,
+  "issues": [
+    {
+      "id": 2,
+      "type": "dead_source_ref",
+      "severity": "error",
+      "slug": "agent-overview",
+      "page": "wiki/architecture/agent-overview.md",
+      "description": "引用的源文件在项目中不存在",
+      "evidence": "docs/agent-design.md",
+      "status": "open",
+      "detected_by": "lint",
+      "created_at": "2026-07-22 02:44",
+      "updated_at": "2026-07-22 02:44"
+    },
+    {
+      "id": 3,
+      "type": "missing_backlink",
+      "severity": "info",
+      "slug": "internal-agent",
+      "page": "",
+      "description": "agent-overview 链接了 internal-agent，但 internal-agent 没有链回",
+      "evidence": "agent-overview → internal-agent",
+      "status": "open",
+      "detected_by": "lint",
+      "created_at": "2026-07-22 02:44",
+      "updated_at": "2026-07-22 02:44"
+    },
+    {
+      "id": 4,
+      "type": "orphan_page",
+      "severity": "info",
+      "slug": "agent-overview",
+      "page": "wiki/architecture/agent-overview.md",
+      "description": "没有任何其他页面链接到本页（仅 index 可达或完全孤立）",
+      "evidence": "",
+      "status": "open",
+      "detected_by": "lint",
+      "created_at": "2026-07-22 02:44",
+      "updated_at": "2026-07-22 02:44"
+    },
+    {
+      "id": 5,
+      "type": "orphan_page",
+      "severity": "info",
+      "slug": "cmd-server",
+      "page": "wiki/modules/cmd-server.md",
+      "description": "没有任何其他页面链接到本页（仅 index 可达或完全孤立）",
+      "evidence": "",
+      "status": "open",
+      "detected_by": "lint",
+      "created_at": "2026-07-22 02:44",
+      "updated_at": "2026-07-22 02:44"
+    },
+    {
+      "id": 6,
+      "type": "stale_draft",
+      "severity": "info",
+      "slug": "agent-overview",
+      "page": "wiki/architecture/agent-overview.md",
+      "description": "draft 状态已持续 37 天未更新（阈值 14 天）",
+      "evidence": "updated_at: 2026-06-15",
+      "status": "open",
+      "detected_by": "lint",
+      "created_at": "2026-07-22 02:44",
+      "updated_at": "2026-07-22 02:44"
+    },
+    {
+      "id": 1,
+      "type": "broken_link",
+      "severity": "error",
+      "slug": "agent-overview",
+      "page": "wiki/architecture/agent-overview.md",
+      "description": "链接「旧版总览」指向不存在的页面",
+      "evidence": "old-overview.md",
+      "status": "auto_resolved",
+      "detected_by": "lint",
+      "created_at": "2026-07-22 02:44",
+      "updated_at": "2026-07-22 02:44"
+    }
+  ],
+  "last_lint": "2026-07-22 02:44"
+}
